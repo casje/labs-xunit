@@ -44,15 +44,17 @@ namespace Labs.Feedback.API.Services
             return _mapper.Map<MensagemDto>(mensagem);
         }
 
-        public MensagemDto PesquisaPorIdent(Guid ident)
+        public MensagemDto PesquisaPorIdent(string ident)
         {
-            if (ident == Guid.Empty)
+            Guid identGuid = ident.ToGuid();
+
+            if (identGuid == Guid.Empty)
             {
                 this._notificador.Adicionar("Para a pesquisa deve informar um identificador válido");
                 return null;
             }
 
-            var mensagem = this._repositorioMensagem.PesquisaPorIdent(ident);
+            var mensagem = this._repositorioMensagem.PesquisaPorIdent(identGuid);
 
             return _mapper.Map<MensagemDto>(mensagem);
         }

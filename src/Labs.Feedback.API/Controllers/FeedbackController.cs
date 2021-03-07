@@ -43,7 +43,7 @@ namespace Labs.Feedback.API
         }
 
         [HttpGet("{ident}")]
-        public IActionResult GetMensagemPorIdent(Guid ident)
+        public IActionResult GetMensagemPorIdent(string ident)
         {
             var mensagem = this._mensagemService.PesquisaPorIdent(ident);
 

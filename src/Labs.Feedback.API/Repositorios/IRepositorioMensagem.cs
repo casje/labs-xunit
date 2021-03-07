@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using Labs.Feedback.API.Model;
 
-namespace Labs.Feedback.API.Repositorio
+namespace Labs.Feedback.API.Repositorios
 {
     public interface IRepositorioMensagem
     {

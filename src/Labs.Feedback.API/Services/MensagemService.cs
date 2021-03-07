@@ -4,10 +4,11 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Labs.Feedback.API.Dto;
 using Labs.Feedback.API.Extensions;
+using Labs.Feedback.API.Filas;
 using Labs.Feedback.API.Model;
 using Labs.Feedback.API.Model.Validadores;
 using Labs.Feedback.API.Notificacoes;
-using Labs.Feedback.API.Repositorio;
+using Labs.Feedback.API.Repositorios;
 
 namespace Labs.Feedback.API.Services
 {
@@ -15,13 +16,17 @@ namespace Labs.Feedback.API.Services
     {
         private readonly IMapper _mapper;
         private readonly INotificador _notificador;
+        private readonly IGerenciadorFila _gerenciadorFila;
         private readonly IRepositorioMensagem _repositorioMensagem;
+
         public MensagemService(IMapper mapper
                              , INotificador notificador
+                             , IGerenciadorFila gerenciadorFila
                              , IRepositorioMensagem repositorioMensagem) : base(notificador)
         {
             this._mapper = mapper;
             this._notificador = notificador;
+            this._gerenciadorFila = gerenciadorFila;
             this._repositorioMensagem = repositorioMensagem;
         }
 
@@ -31,7 +36,10 @@ namespace Labs.Feedback.API.Services
 
             if (!ExecutarValidacao(new MensagemValidador(), mensagem)) return null;
 
-            this._repositorioMensagem.AdicionarMensagem(mensagem);            
+            this._repositorioMensagem.AdicionarMensagem(mensagem);
+
+            if (mensagem != null && mensagem.Categoria == Categoria.ERRO)
+                this._gerenciadorFila.AdicionarItem($"Recebemos uma mensagem de erro - {mensagem.Ident}");
 
             return _mapper.Map<MensagemDto>(mensagem);
         }

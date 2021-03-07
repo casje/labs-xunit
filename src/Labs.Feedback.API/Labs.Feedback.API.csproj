@@ -10,8 +10,9 @@
     <Folder Include="Extensions\" />
     <Folder Include="Model\" />
     <Folder Include="Notificacoes\" />
-    <Folder Include="Repositorio\" />
+    <Folder Include="Repositorios\" />
     <Folder Include="Services\" />
+    <Folder Include="Filas\" />
   </ItemGroup>
 
   <ItemGroup>

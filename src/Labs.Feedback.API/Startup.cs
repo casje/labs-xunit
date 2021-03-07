@@ -6,8 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Labs.Feedback.API.Context;
 using Labs.Feedback.API.Services;
-using Labs.Feedback.API.Repositorio;
+using Labs.Feedback.API.Repositorios;
 using Labs.Feedback.API.Notificacoes;
+using Labs.Feedback.API.Filas;
 
 namespace Labs.Feedback.API
 {
@@ -28,6 +29,7 @@ namespace Labs.Feedback.API
 
             services.AddScoped<IMensagemService, MensagemService>();
             services.AddScoped<IRepositorioMensagem, RepositorioMensagem>();
+            services.AddScoped<IGerenciadorFila, GerenciadorFila>();
 
             services.AddDbContext<AppDbContext>(ServiceLifetime.Singleton);
         }

@@ -6,7 +6,7 @@ using Labs.Feedback.API.Context;
 using Labs.Feedback.API.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace Labs.Feedback.API.Repositorio
+namespace Labs.Feedback.API.Repositorios
 {
     public class RepositorioMensagem : IRepositorioMensagem
     {

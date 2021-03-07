@@ -373,4 +373,4 @@ FodyWeavers.xsd
 .history/
 
 # Visual Studio
-.vs/*
+.vs/

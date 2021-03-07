@@ -1,15 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Labs.Feedback.API.Context;
+using Labs.Feedback.API.Services;
+using Labs.Feedback.API.Repositorio;
 
 namespace Labs.Feedback.API
 {
@@ -25,6 +22,12 @@ namespace Labs.Feedback.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAutoMapper();
+
+            services.AddScoped<IMensagemService, MensagemService>();
+            services.AddScoped<IRepositorioMensagem, RepositorioMensagem>();
+
+            services.AddDbContext<AppDbContext>(ServiceLifetime.Singleton);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

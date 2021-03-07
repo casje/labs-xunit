@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{68EDD153-24B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.Feedback.API", "src\Labs.Feedback.API\Labs.Feedback.API.csproj", "{7282D07C-184A-437C-854A-67AB158884BE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1E42EC5B-A86B-4F85-81E9-201D3503209B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.Feedback.API.UnitTests", "tests\Labs.Feedback.API.UnitTests\Labs.Feedback.API.UnitTests.csproj", "{FA6C1F06-FBD7-4054-BED9-D6554F16649C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,8 +36,21 @@ Global
 		{7282D07C-184A-437C-854A-67AB158884BE}.Release|x64.Build.0 = Release|Any CPU
 		{7282D07C-184A-437C-854A-67AB158884BE}.Release|x86.ActiveCfg = Release|Any CPU
 		{7282D07C-184A-437C-854A-67AB158884BE}.Release|x86.Build.0 = Release|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Debug|x64.Build.0 = Debug|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Debug|x86.Build.0 = Debug|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Release|x64.ActiveCfg = Release|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Release|x64.Build.0 = Release|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Release|x86.ActiveCfg = Release|Any CPU
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7282D07C-184A-437C-854A-67AB158884BE} = {68EDD153-24B4-4B62-8FDF-4D667AF2FE3A}
+		{FA6C1F06-FBD7-4054-BED9-D6554F16649C} = {1E42EC5B-A86B-4F85-81E9-201D3503209B}
 	EndGlobalSection
 EndGlobal

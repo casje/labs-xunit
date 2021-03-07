@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Labs.Feedback.API.Dto;
 using Labs.Feedback.API.Notificacoes;
 using Labs.Feedback.API.Services;
+using System.Linq;
 
 namespace Labs.Feedback.API
 {
@@ -36,8 +37,7 @@ namespace Labs.Feedback.API
             if (mensagem == null)
                 return BadRequest();
 
-            return Ok(new
-            {
+            return StatusCode(201, new {
                 data = mensagem
             });
         }
@@ -77,7 +77,7 @@ namespace Labs.Feedback.API
                 });
             }
 
-            if (mensagens == null)
+            if (! (mensagens != null && mensagens.Any()))
                 return NotFound();
 
             return Ok(new

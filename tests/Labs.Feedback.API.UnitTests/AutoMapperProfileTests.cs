@@ -26,10 +26,11 @@ namespace Labs.Feedback.API.UnitTests
         public void AutoMapperProfile_ConverterMensagemDtoParaMensagemModel_True()
         {
             // Arrange
+            var ident = Guid.NewGuid();
             var mensagemDto = new MensagemDto()
             {
-                Ident = 1,
-                Texto = "Mensagem de feedback",
+                Ident = ident.ToString(),
+                Descricao = "Mensagem de feedback",
                 Categoria = "ELOGIO"
             };
 
@@ -37,8 +38,8 @@ namespace Labs.Feedback.API.UnitTests
             var mensagemModel = _mapper.Map<Mensagem>(mensagemDto);
 
             // Assert
-            Assert.Equal(1, mensagemModel.Ident);
-            Assert.Equal("Mensagem de feedback", mensagemModel.Texto);
+            Assert.Equal(ident, mensagemModel.Ident);
+            Assert.Equal("Mensagem de feedback", mensagemModel.Descricao);
             Assert.Equal(Categoria.ELOGIO, mensagemModel.Categoria);
         }
 
@@ -46,18 +47,20 @@ namespace Labs.Feedback.API.UnitTests
         public void AutoMapperProfile_ConverterMensagemModelParaMensagemDto_True()
         {
             // Arrange
-            var mensagem = new Mensagem(
-                ident: 1,
-                texto: "Mensagem de feedback",
-                categoria: Categoria.ERRO
-            );
+            var ident = Guid.NewGuid();
+            var mensagem = new Mensagem
+            {
+                Ident = ident,
+                Descricao = "Mensagem de feedback",
+                Categoria = Categoria.ERRO
+            };
 
             // Act
             var mensagemDto = _mapper.Map<MensagemDto>(mensagem);
 
             // Assert
-            Assert.Equal(1, mensagemDto.Ident);
-            Assert.Equal("Mensagem de feedback", mensagemDto.Texto);
+            Assert.Equal(ident, mensagemDto.Ident.ToGuid());
+            Assert.Equal("Mensagem de feedback", mensagemDto.Descricao);
             Assert.Equal("ERRO", mensagemDto.Categoria);
         }
 
@@ -65,10 +68,11 @@ namespace Labs.Feedback.API.UnitTests
         public void AutoMapperProfile_ConverterMensagemDtoParaMensagemModelComCategoriaInvalida_CategoriaNENHUMA()
         {
             // Arrange
+            var ident = Guid.NewGuid();
             var mensagemDto = new MensagemDto
             {
-                Ident = 1,
-                Texto = "Mensagem de feedback",
+                Ident = ident.ToString(),
+                Descricao = "Mensagem de feedback",
                 Categoria = "qualquer-coisa"
             };
 

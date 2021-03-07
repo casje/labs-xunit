@@ -10,7 +10,7 @@ namespace Labs.Feedback.API.Services
     {
         MensagemDto CadastrarMensagem(MensagemDto mensagemDto);
 
-        MensagemDto PesquisaPorIdent(int ident);
+        MensagemDto PesquisaPorIdent(Guid ident);
 
         IEnumerable<MensagemDto> PesquisaPorCategoria(string textoCategoria);
     }

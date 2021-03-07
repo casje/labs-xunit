@@ -8,7 +8,7 @@ namespace Labs.Feedback.API.Repositorio
     public interface IRepositorioMensagem
     {
         Boolean AdicionarMensagem(Mensagem mensagem);
-        Mensagem PesquisaPorIdent(int ident);
+        Mensagem PesquisaPorIdent(Guid ident);
         IEnumerable<Mensagem> PesquisaPor(Expression<Func<Mensagem, bool>> condicao);
     }
 }

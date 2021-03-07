@@ -15,7 +15,7 @@ namespace Labs.Feedback.API.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if(!optionsBuilder.IsConfigured)
+            if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseInMemoryDatabase(databaseName: "dbfeedback");
             }
@@ -29,11 +29,7 @@ namespace Labs.Feedback.API.Context
                 .HasKey(m => m.Ident);
 
             modelBuilder.Entity<Mensagem>()
-                .Property(m => m.Ident)
-                .ValueGeneratedOnAdd();
-
-            modelBuilder.Entity<Mensagem>()
-                .Property(m => m.Texto)
+                .Property(m => m.Descricao)
                 .HasMaxLength(100);
 
             modelBuilder.Entity<Mensagem>()

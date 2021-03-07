@@ -13,6 +13,7 @@ namespace Microsoft.Extensions.DependencyInjection
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.CreateMap<String, Categoria>().ConvertUsing(x => x.ToCategoria());
+                mc.CreateMap<String, Guid>().ConvertUsing(x => x.ToGuid());
                 mc.AddProfile(new AutoMapperProfile());
             });
             IMapper mapper = mapperConfig.CreateMapper();

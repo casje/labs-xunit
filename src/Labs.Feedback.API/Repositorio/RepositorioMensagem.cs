@@ -27,7 +27,7 @@ namespace Labs.Feedback.API.Repositorio
             return true;
         }
 
-        public Mensagem PesquisaPorIdent(int ident)
+        public Mensagem PesquisaPorIdent(Guid ident)
         {
             var mensagem = _dbSet.Find(ident);
 

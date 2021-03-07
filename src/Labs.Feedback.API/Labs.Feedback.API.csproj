@@ -5,15 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Context\" />
+    <Folder Include="Dto\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Model\" />
+    <Folder Include="Notificacoes\" />
+    <Folder Include="Repositorio\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
-    <PackageReference Include="FluentValidator" Version="2.0.4" />
+    <PackageReference Include="FluentValidation" Version="9.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.12" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Folder Include="Repositorio\" />
-    <Folder Include="Context\" />
-  </ItemGroup>
 </Project>

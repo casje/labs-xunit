@@ -6,7 +6,7 @@
 /Users/claudioalvesjr/workspace/labs/lab-xunit/src/Labs.Feedback.API/bin/Debug/netcoreapp3.1/Labs.Feedback.API.dll
 /Users/claudioalvesjr/workspace/labs/lab-xunit/src/Labs.Feedback.API/bin/Debug/netcoreapp3.1/Labs.Feedback.API.pdb
 /Users/claudioalvesjr/workspace/labs/lab-xunit/src/Labs.Feedback.API/bin/Debug/netcoreapp3.1/AutoMapper.dll
-/Users/claudioalvesjr/workspace/labs/lab-xunit/src/Labs.Feedback.API/bin/Debug/netcoreapp3.1/FluentValidator.dll
+/Users/claudioalvesjr/workspace/labs/lab-xunit/src/Labs.Feedback.API/bin/Debug/netcoreapp3.1/FluentValidation.dll
 /Users/claudioalvesjr/workspace/labs/lab-xunit/src/Labs.Feedback.API/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/claudioalvesjr/workspace/labs/lab-xunit/src/Labs.Feedback.API/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
 /Users/claudioalvesjr/workspace/labs/lab-xunit/src/Labs.Feedback.API/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.dll

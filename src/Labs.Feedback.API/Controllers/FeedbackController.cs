@@ -1,8 +1,9 @@
 using System;
 using System.Net.Http;
-using Labs.Feedback.API.Dto;
-using Labs.Feedback.API.Services;
 using Microsoft.AspNetCore.Mvc;
+using Labs.Feedback.API.Dto;
+using Labs.Feedback.API.Notificacoes;
+using Labs.Feedback.API.Services;
 
 namespace Labs.Feedback.API
 {
@@ -11,10 +12,13 @@ namespace Labs.Feedback.API
     public class FeedbackController : ControllerBase
     {
         private readonly IMensagemService _mensagemService;
+        private readonly INotificador _notificador;
 
-        public FeedbackController(IMensagemService mensagemService)
+        public FeedbackController(IMensagemService mensagemService
+                                , INotificador notificador)
         {
             this._mensagemService = mensagemService;
+            this._notificador = notificador;
         }
 
         [HttpPost]
@@ -22,23 +26,40 @@ namespace Labs.Feedback.API
         {
             var mensagem = this._mensagemService.CadastrarMensagem(mensagemDto);
 
+            if (_notificador.TemNotificacao())
+            {
+                return StatusCode(422, new {
+                    data = _notificador.ObterNotificacoes()
+                });
+            }
+
             if (mensagem == null)
                 return BadRequest();
 
-            return Ok(new {
+            return Ok(new
+            {
                 data = mensagem
             });
         }
 
         [HttpGet("{ident}")]
-        public IActionResult GetMensagemPorIdent(int ident)
+        public IActionResult GetMensagemPorIdent(Guid ident)
         {
             var mensagem = this._mensagemService.PesquisaPorIdent(ident);
+
+            if (_notificador.TemNotificacao())
+            {
+                return StatusCode(422, new
+                {
+                    data = _notificador.ObterNotificacoes()
+                });
+            }
 
             if (mensagem == null)
                 return NotFound();
 
-            return Ok(new {
+            return Ok(new
+            {
                 data = mensagem
             });
         }
@@ -48,10 +69,19 @@ namespace Labs.Feedback.API
         {
             var mensagens = this._mensagemService.PesquisaPorCategoria(categoria);
 
+            if (_notificador.TemNotificacao())
+            {
+                return StatusCode(422, new
+                {
+                    data = _notificador.ObterNotificacoes()
+                });
+            }
+
             if (mensagens == null)
                 return NotFound();
 
-            return Ok(new {
+            return Ok(new
+            {
                 data = mensagens
             });
         }

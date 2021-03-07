@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Labs.Feedback.API.Context;
 using Labs.Feedback.API.Services;
 using Labs.Feedback.API.Repositorio;
+using Labs.Feedback.API.Notificacoes;
 
 namespace Labs.Feedback.API
 {
@@ -23,6 +24,7 @@ namespace Labs.Feedback.API
         {
             services.AddControllers();
             services.AddAutoMapper();
+            services.AddScoped<INotificador, Notificador>();
 
             services.AddScoped<IMensagemService, MensagemService>();
             services.AddScoped<IRepositorioMensagem, RepositorioMensagem>();

@@ -9,7 +9,7 @@
 /Users/claudioalvesjr/workspace/labs/lab-xunit/tests/Labs.Feedback.API.UnitTests/bin/Debug/netcoreapp3.1/Labs.Feedback.API.UnitTests.dll
 /Users/claudioalvesjr/workspace/labs/lab-xunit/tests/Labs.Feedback.API.UnitTests/bin/Debug/netcoreapp3.1/Labs.Feedback.API.UnitTests.pdb
 /Users/claudioalvesjr/workspace/labs/lab-xunit/tests/Labs.Feedback.API.UnitTests/bin/Debug/netcoreapp3.1/AutoMapper.dll
-/Users/claudioalvesjr/workspace/labs/lab-xunit/tests/Labs.Feedback.API.UnitTests/bin/Debug/netcoreapp3.1/FluentValidator.dll
+/Users/claudioalvesjr/workspace/labs/lab-xunit/tests/Labs.Feedback.API.UnitTests/bin/Debug/netcoreapp3.1/FluentValidation.dll
 /Users/claudioalvesjr/workspace/labs/lab-xunit/tests/Labs.Feedback.API.UnitTests/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/claudioalvesjr/workspace/labs/lab-xunit/tests/Labs.Feedback.API.UnitTests/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
 /Users/claudioalvesjr/workspace/labs/lab-xunit/tests/Labs.Feedback.API.UnitTests/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.CodeCoverage.Shim.dll

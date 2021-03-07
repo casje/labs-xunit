@@ -17,5 +17,18 @@ namespace Labs.Feedback.API.Extensions
 
             return categoria;
         }
+
+        public static Guid ToGuid(this string text)
+        {
+            Guid result = Guid.Empty;
+
+            if (!String.IsNullOrEmpty(text))
+            {
+                text = text.Trim();
+                Guid.TryParse(text, out result);
+            }
+
+            return result;
+        }
     }
 }

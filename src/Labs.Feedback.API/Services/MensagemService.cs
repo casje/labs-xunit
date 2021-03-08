@@ -38,8 +38,8 @@ namespace Labs.Feedback.API.Services
 
             this._repositorioMensagem.AdicionarMensagem(mensagem);
 
-            if (mensagem != null && mensagem.Categoria == Categoria.ERRO)
-                this._gerenciadorFila.AdicionarItem($"Recebemos uma mensagem de erro - {mensagem.Ident}");
+            if (mensagem?.Categoria == Categoria.ERRO)
+                this._gerenciadorFila.AdicionarItem(mensagem);
 
             return _mapper.Map<MensagemDto>(mensagem);
         }

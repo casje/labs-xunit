@@ -1,4 +1,5 @@
 ﻿using System;
+using Labs.Feedback.API.Model;
 using Microsoft.Extensions.Logging;
 
 namespace Labs.Feedback.API.Filas
@@ -12,14 +13,12 @@ namespace Labs.Feedback.API.Filas
             _logger = logger;
         }
 
-        public bool AdicionarItem(string mensagem)
+        public bool AdicionarItem(Mensagem mensagem)
         {
-            if(String.IsNullOrEmpty(mensagem))
-            {
+            if(mensagem == null)
                 return false;
-            }
 
-            _logger.LogInformation($"Novo item adicionado a fila: {mensagem}");
+            _logger.LogInformation($"Novo item adicionado a fila: [{mensagem.Categoria}] {mensagem.Ident} - {mensagem.Descricao}");
             return true;
         }
     }

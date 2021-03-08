@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using Labs.Feedback.API.Dto;
-using Labs.Feedback.API.Model;
 using Labs.Feedback.API.Notificacoes;
 using Labs.Feedback.API.Services;
-using Labs.Feedback.API.UnitTests._Builders;
-using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
 

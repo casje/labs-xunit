@@ -3,7 +3,7 @@ using System.Text;
 using Bogus;
 using Labs.Feedback.API.Dto;
 
-namespace Labs.Feedback.API.UnitTests._Builders
+namespace Labs.Feedback.API.UnitTests
 {
     public class MensagemDtoBuilder
     {
@@ -24,6 +24,12 @@ namespace Labs.Feedback.API.UnitTests._Builders
         public static MensagemDtoBuilder Criar()
         {
             return new MensagemDtoBuilder();
+        }
+
+        public MensagemDtoBuilder SemIdent()
+        {
+            _ident = null;
+            return this;
         }
 
         public MensagemDtoBuilder ComIdent(string ident)

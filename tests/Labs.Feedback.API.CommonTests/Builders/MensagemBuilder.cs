@@ -3,7 +3,7 @@ using System.Text;
 using Bogus;
 using Labs.Feedback.API.Model;
 
-namespace Labs.Feedback.API.UnitTests
+namespace Labs.Feedback.API.CommonTests
 {
     public class MensagemBuilder
     {

@@ -8,11 +8,11 @@ namespace Labs.Feedback.API.Model.Validadores
         public MensagemValidador()
         {
             RuleFor(m => m.Descricao)
-                   .NotEmpty().WithMessage("A descrição da mensagem deve ser informada")
-                   .MaximumLength(100).WithMessage("A descrição da mensagem deve conter no máximo 100 dígitos");
+                   .NotEmpty().WithMessage(Mensagens.DESCRICAO_VAZIA)
+                   .MaximumLength(100).WithMessage(Mensagens.DESCRICAO_TAMANHO_MAXIMO);
 
             RuleFor(m => m.Categoria)
-                   .NotEqual(Categoria.NENHUMA).WithMessage("A Categoria não é válida ou não foi informada");
+                   .NotEqual(Categoria.NENHUMA).WithMessage(Mensagens.CATEGORIA_INVALIDA);
 
         }
     }

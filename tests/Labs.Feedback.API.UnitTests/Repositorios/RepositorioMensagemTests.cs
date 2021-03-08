@@ -1,4 +1,5 @@
 ﻿using System;
+using Labs.Feedback.API.CommonTests;
 using Labs.Feedback.API.Context;
 using Labs.Feedback.API.Model;
 using Labs.Feedback.API.Repositorios;

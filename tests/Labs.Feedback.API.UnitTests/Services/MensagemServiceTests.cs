@@ -1,5 +1,6 @@
 ﻿using System;
 using AutoMapper;
+using Labs.Feedback.API.CommonTests;
 using Labs.Feedback.API.Dto;
 using Labs.Feedback.API.Filas;
 using Labs.Feedback.API.Model;

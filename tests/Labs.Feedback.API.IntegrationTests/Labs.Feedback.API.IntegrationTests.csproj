@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -12,16 +12,13 @@
     <PackageReference Include="coverlet.collector" Version="1.2.0" />
     <PackageReference Include="Bogus" Version="33.0.2" />
     <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="3.1.12" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Labs.Feedback.API\Labs.Feedback.API.csproj" />
-    <ProjectReference Include="..\Labs.Feedback.API.CommonTests\Labs.Feedback.API.CommonTests.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-    <Folder Include="Services\" />
-    <Folder Include="Repositorios\" />
+    <ProjectReference Include="..\Labs.Feedback.API.CommonTests\Labs.Feedback.API.CommonTests.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>

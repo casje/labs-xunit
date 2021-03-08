@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Text;
+using System.Text.Json;
 using Bogus;
 using Labs.Feedback.API.Dto;
 
-namespace Labs.Feedback.API.UnitTests
+namespace Labs.Feedback.API.CommonTests
 {
     public class MensagemDtoBuilder
     {
@@ -60,6 +61,16 @@ namespace Labs.Feedback.API.UnitTests
             };
 
             return mensagem;
+        }
+
+        public static String ToJson(MensagemDto mensagemDto)
+        {
+            return JsonSerializer.Serialize(mensagemDto);
+        }
+
+        public static MensagemDto ToMensagemDto(string mensagemDto)
+        {
+            return JsonSerializer.Deserialize<MensagemDto>(mensagemDto);
         }
 
         private string GerarTexto(int tamanhoMinimoTexto)

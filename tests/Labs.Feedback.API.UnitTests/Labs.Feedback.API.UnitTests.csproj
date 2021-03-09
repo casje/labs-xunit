@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Labs.Feedback.API\Labs.Feedback.API.csproj" />
-    <ProjectReference Include="..\Labs.Feedback.API.CommonTests\Labs.Feedback.API.CommonTests.csproj" />
+    <ProjectReference Include="..\Labs.Feedback.API.UtilTest\Labs.Feedback.API.UtilTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>

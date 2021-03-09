@@ -1,7 +1,7 @@
 using System;
 using Labs.Feedback.API.Model;
 using Labs.Feedback.API.Model.Validadores;
-using Labs.Feedback.API.CommonTests;
+using Labs.Feedback.API.UtilTest;
 using FluentValidation.TestHelper;
 using Xunit;
 

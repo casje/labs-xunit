@@ -12,7 +12,7 @@ using Labs.Feedback.API.Repositorios;
 using Labs.Feedback.API.Notificacoes;
 using Labs.Feedback.API.Filas;
 using Labs.Feedback.API.Model;
-using Labs.Feedback.API.CommonTests;
+using Labs.Feedback.API.UtilTest;
 using Microsoft.AspNetCore.TestHost;
 using Moq;
 using Xunit;
@@ -76,7 +76,7 @@ namespace Labs.Feedback.API.IntegrationTests
             var host = await _hostBuilder.StartAsync();
 
             var client = host.GetTestClient();
-            
+
             var mensagemDto = MensagemDtoBuilder.Criar().Build();
             var body = new StringContent(MensagemDtoBuilder.ToJson(mensagemDto), Encoding.UTF8, "application/json");
 

@@ -4,7 +4,7 @@ using System.Text.Json;
 using Bogus;
 using Labs.Feedback.API.Dto;
 
-namespace Labs.Feedback.API.CommonTests
+namespace Labs.Feedback.API.UtilTest
 {
     public class MensagemDtoBuilder
     {

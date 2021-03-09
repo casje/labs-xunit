@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.Feedback.API.UnitTests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.Feedback.API.IntegrationTests", "tests\Labs.Feedback.API.IntegrationTests\Labs.Feedback.API.IntegrationTests.csproj", "{767C7808-4E89-425C-9A18-B10478EB192A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.Feedback.API.CommonTests", "tests\Labs.Feedback.API.CommonTests\Labs.Feedback.API.CommonTests.csproj", "{F93B3579-22EA-4EB6-8F94-FC11168095B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.Feedback.API.UtilTest", "tests\Labs.Feedback.API.UtilTest\Labs.Feedback.API.UtilTest.csproj", "{F93B3579-22EA-4EB6-8F94-FC11168095B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

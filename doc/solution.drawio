@@ -1,10 +1,10 @@
-<mxfile host="65bd71144e" modified="2021-03-07T17:12:54.489Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.54.1 Chrome/87.0.4280.141 Electron/11.3.0 Safari/537.36" etag="FgisrDgkpBDf-NPiH4QZ" version="14.2.4" type="embed">
+<mxfile host="65bd71144e" modified="2021-03-08T23:11:13.256Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.54.1 Chrome/87.0.4280.141 Electron/11.3.0 Safari/537.36" etag="Xvz1faqvTB3lUKsTr7eJ" version="14.2.4" type="embed">
     <diagram id="DZB5xbJw5TP2kyAUjQM0" name="Page-1">
-        <mxGraphModel dx="661" dy="598" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
+        <mxGraphModel dx="980" dy="598" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="6" value="API Client" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#ffffff;strokeColor=none;fontSize=16;fillColor=#660000;" parent="1" vertex="1">
+                <mxCell id="6" value="API Client" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="20" y="40" width="130" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="Controller" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#003366;strokeColor=none;fontSize=16;fontColor=#FFFFFF;" parent="1" vertex="1">
@@ -16,16 +16,16 @@
                 <mxCell id="9" value="startup" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#333333;fontSize=14;fontColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="570" y="80" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="Services" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fontSize=16;fillColor=#660066;fontColor=#FFFFFF;" parent="1" vertex="1">
+                <mxCell id="13" value="Services" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#C73500;fontSize=16;fillColor=#fa6800;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="360" y="180" width="135" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="Repositorio" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fontSize=16;fillColor=#994C00;fontColor=#FFFFFF;" parent="1" vertex="1">
+                <mxCell id="14" value="Repositorio" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#005700;fontSize=16;fillColor=#008a00;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="360" y="320" width="135" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="Gerenciador Fila" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fontSize=16;fillColor=#006633;fontColor=#FFFFFF;" parent="1" vertex="1">
+                <mxCell id="15" value="Gerenciador Fila" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#005700;fontSize=16;fillColor=#008a00;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="529" y="320" width="135" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=16;fillColor=#994C00;" parent="1" vertex="1">
+                <mxCell id="16" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=16;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="397.5" y="440" width="60.5" height="64" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;shape=mxgraph.azure.queue_generic;pointerEvents=1;fontSize=16;fillColor=#006633;" parent="1" vertex="1">

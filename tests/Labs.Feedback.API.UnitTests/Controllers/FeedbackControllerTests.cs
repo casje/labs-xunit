@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Labs.Feedback.API.Dto;
 using Labs.Feedback.API.Notificacoes;
 using Labs.Feedback.API.Services;
-using Labs.Feedback.API.CommonTests;
+using Labs.Feedback.API.UtilTest;
 using Moq;
 using Xunit;
 

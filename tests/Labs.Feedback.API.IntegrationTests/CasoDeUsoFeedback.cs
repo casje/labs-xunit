@@ -72,7 +72,7 @@ namespace Labs.Feedback.API.IntegrationTests
 
             var client = host.GetTestClient();
 
-            var mensagemDto = MensagemDtoBuilder.Criar().Build();
+            var mensagemDto = MensagemDtoBuilder.Criar().ComCategoria("Erro").Build();
             var body = new StringContent(MensagemDtoBuilder.ToJson(mensagemDto), Encoding.UTF8, "application/json");
 
             // Act

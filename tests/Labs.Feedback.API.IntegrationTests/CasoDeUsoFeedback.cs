@@ -26,11 +26,14 @@ namespace Labs.Feedback.API.IntegrationTests
 {
     public class CasoDeUsoFeedback
     {
-        private readonly IHostBuilder _hostBuilder;
-
-        public CasoDeUsoFeedback()
+        private IHostBuilder CriarHostBuilderComGerenciadorFake()
         {
-            _hostBuilder = new HostBuilder()
+            var gerenciador = new GerenciadorFilaFake();
+            return CriarHostBuilderComGerenciador(gerenciador);
+        }
+        private IHostBuilder CriarHostBuilderComGerenciador(IGerenciadorFila gerenciadorFila)
+        {
+            var hostBuilder = new HostBuilder()
                 .ConfigureWebHost(webHost =>
                 {
                     // Add TestServer
@@ -41,17 +44,12 @@ namespace Labs.Feedback.API.IntegrationTests
                         services.AddControllers();
                         services.AddAutoMapper();
                         services.AddScoped<INotificador, Notificador>();
-
                         services.AddScoped<IMensagemService, MensagemService>();
                         services.AddScoped<IRepositorioMensagem, RepositorioMensagem>();
 
-                        // Gerenciador de Fila "mocado"
-                        var mockGerenciador = new Mock<IGerenciadorFila>();
-                        mockGerenciador.Setup(m => m.AdicionarItem(It.IsAny<Mensagem>())).Returns(true);
-
-                        services.AddScoped<IGerenciadorFila>(sp => mockGerenciador.Object);
-
-
+                        // Gerenciador de Fila "fake"
+                        services.AddScoped<IGerenciadorFila>(sp => gerenciadorFila);
+                        // Banco de dados em memória
                         services.AddDbContext<AppDbContext>(options =>
                         {
                             options.UseInMemoryDatabase(String.Concat("dbtest-", new Random().Next(10000000, 99999999)));
@@ -60,20 +58,21 @@ namespace Labs.Feedback.API.IntegrationTests
                     webHost.Configure(app =>
                     {
                         app.UseRouting();
-
                         app.UseEndpoints(endpoints =>
                         {
                             endpoints.MapControllers();
                         });
                     });
                 });
+            return hostBuilder;
         }
 
         [Fact]
         public async Task CadastrarMensagem_RegistrarNovaMensagemDeFeedbackComCategoriaDeErro_RetornarHttpStatusCode201()
         {
             // Arrange
-            var host = await _hostBuilder.StartAsync();
+            var hostBuilder = CriarHostBuilderComGerenciadorFake();
+            var host = await hostBuilder.StartAsync();
 
             var client = host.GetTestClient();
 
@@ -95,7 +94,8 @@ namespace Labs.Feedback.API.IntegrationTests
         public async Task CadastrarMensagem_RegistrarNovaMensagemComCategoriaInvalida_RetornarHttpStatusCode422()
         {
             // Arrange
-            var host = await _hostBuilder.StartAsync();
+            var hostBuilder = CriarHostBuilderComGerenciadorFake();
+            var host = await hostBuilder.StartAsync();
 
             var client = host.GetTestClient();
 
@@ -108,7 +108,7 @@ namespace Labs.Feedback.API.IntegrationTests
 
             // Assert
             Assert.Equal(HttpStatusCode.UnprocessableEntity, response.StatusCode); //422
-            Assert.Contains(Mensagens.CATEGORIA_INVALIDA, mensagemRetorno, StringComparison.InvariantCultureIgnoreCase);
+            Assert.Contains(Mensagens.CATEGORIA_INVALIDA, mensagemRetorno);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Labs.Feedback.API.UtilTest
 {
     public class MensagemDtoBuilder
     {
+        public const string IDENT_DEFAULT = "5458892f-5283-4148-87c2-f8c3e19a8d0b";
         private readonly Faker _faker;
         private string _ident;
         private string _descricao;
@@ -36,6 +37,12 @@ namespace Labs.Feedback.API.UtilTest
         public MensagemDtoBuilder ComIdent(string ident)
         {
             _ident = ident;
+            return this;
+        }
+
+        public MensagemDtoBuilder ComIdentDefault()
+        {
+            _ident = IDENT_DEFAULT;
             return this;
         }
 

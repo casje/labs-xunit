@@ -7,6 +7,7 @@ namespace Labs.Feedback.API.UtilTest
 {
     public class MensagemBuilder
     {
+        public static readonly Guid IDENT_DEFAULT = Guid.Parse("5458892f-5283-4148-87c2-f8c3e19a8d0b");
         private readonly Faker _faker;
         private Guid _ident;
         private string _descricao;
@@ -29,6 +30,18 @@ namespace Labs.Feedback.API.UtilTest
         public MensagemBuilder ComIdent(Guid ident)
         {
             _ident = ident;
+            return this;
+        }
+
+        public MensagemBuilder ComIdent(string ident)
+        {
+            Guid.TryParse(ident, out _ident);
+            return this;
+        }
+
+        public MensagemBuilder ComIdentDefault()
+        {
+            _ident = IDENT_DEFAULT;
             return this;
         }
 

@@ -38,7 +38,6 @@ namespace Labs.Feedback.API.IntegrationTests
                 {
                     // Add TestServer
                     webHost.UseTestServer();
-
                     webHost.ConfigureServices(services =>
                     {
                         services.AddControllers();
@@ -58,10 +57,7 @@ namespace Labs.Feedback.API.IntegrationTests
                     webHost.Configure(app =>
                     {
                         app.UseRouting();
-                        app.UseEndpoints(endpoints =>
-                        {
-                            endpoints.MapControllers();
-                        });
+                        app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
                     });
                 });
             return hostBuilder;
@@ -81,7 +77,6 @@ namespace Labs.Feedback.API.IntegrationTests
 
             // Act
             var response = await client.PostAsync("http://exemplo.com/api/feedback", body);
-            //response.EnsureSuccessStatusCode();
             var mensagemRetorno = await response.Content.ReadAsStringAsync();
 
             // Assert

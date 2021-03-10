@@ -28,8 +28,8 @@ namespace Labs.Feedback.API.IntegrationTests
     {
         private IHostBuilder CriarHostBuilderComGerenciadorFake()
         {
-            var gerenciador = new GerenciadorFilaFake();
-            return CriarHostBuilderComGerenciador(gerenciador);
+            var gerenciadorFilaFake = new GerenciadorFilaFake();
+            return CriarHostBuilderComGerenciador(gerenciadorFilaFake);
         }
         private IHostBuilder CriarHostBuilderComGerenciador(IGerenciadorFila gerenciadorFila)
         {

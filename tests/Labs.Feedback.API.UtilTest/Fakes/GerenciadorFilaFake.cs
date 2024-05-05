@@ -1,14 +1,12 @@
-using System;
+using Labs.Feedback.API.Abstraction.Fila;
 using Labs.Feedback.API.Model;
-using Labs.Feedback.API.Filas;
 
-namespace Labs.Feedback.API.UtilTest
+namespace Labs.Feedback.API.UtilTest;
+
+public class GerenciadorFilaFake : IGerenciadorFila
 {
-    public class GerenciadorFilaFake : IGerenciadorFila
+    public bool AdicionarItem(Mensagem mensagem)
     {
-        public bool AdicionarItem(Mensagem mensagem)
-        {
-            return true;
-        }
+        return true;
     }
 }

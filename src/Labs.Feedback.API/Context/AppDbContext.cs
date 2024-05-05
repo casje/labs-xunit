@@ -1,40 +1,38 @@
-﻿using System;
-using Labs.Feedback.API.Model;
+﻿using Labs.Feedback.API.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace Labs.Feedback.API.Context
+namespace Labs.Feedback.API.Context;
+
+public class AppDbContext : DbContext
 {
-    public class AppDbContext : DbContext
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options)
-            : base(options)
+    }
+
+    public DbSet<Mensagem> Mensagens { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
         {
+            optionsBuilder.UseInMemoryDatabase(databaseName: "dbfeedback");
         }
+    }
 
-        public DbSet<Mensagem> Mensagens { get; set; }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseInMemoryDatabase(databaseName: "dbfeedback");
-            }
-        }
+        modelBuilder.Entity<Mensagem>()
+            .HasKey(m => m.Ident);
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Mensagem>()
+            .Property(m => m.Descricao)
+            .HasMaxLength(100);
 
-            modelBuilder.Entity<Mensagem>()
-                .HasKey(m => m.Ident);
-
-            modelBuilder.Entity<Mensagem>()
-                .Property(m => m.Descricao)
-                .HasMaxLength(100);
-
-            modelBuilder.Entity<Mensagem>()
-                .Property(m => m.Categoria)
-                .HasConversion<string>();
-        }
+        modelBuilder.Entity<Mensagem>()
+            .Property(m => m.Categoria)
+            .HasConversion<string>();
     }
 }

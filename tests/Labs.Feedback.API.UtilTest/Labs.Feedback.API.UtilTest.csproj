@@ -1,17 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bogus" Version="33.0.2" />
-    <PackageReference Include="Moq" Version="4.16.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Builders\" />
-    <Folder Include="Extensions\" />
+    <PackageReference Include="Bogus" Version="35.5.*" />
+    <PackageReference Include="Moq" Version="4.20.*" />
   </ItemGroup>
 
   <ItemGroup>

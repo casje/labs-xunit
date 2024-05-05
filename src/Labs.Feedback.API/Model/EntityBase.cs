@@ -1,13 +1,12 @@
 using System;
 
-namespace Labs.Feedback.API.Model
+namespace Labs.Feedback.API.Model;
+
+public class EntityBase
 {
-    public class EntityBase
+    public EntityBase()
     {
-        public EntityBase()
-        {
-            Ident = Guid.NewGuid();
-        }
-        public Guid Ident { get; set; }
+        Ident = Guid.NewGuid();
     }
+    public Guid Ident { get; set; }
 }

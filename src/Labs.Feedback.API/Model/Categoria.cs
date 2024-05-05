@@ -1,13 +1,10 @@
-using System;
+namespace Labs.Feedback.API.Model;
 
-namespace Labs.Feedback.API.Model
+public enum Categoria
 {
-    public enum Categoria
-    {
-        NENHUMA,
-        ERRO,
-        DUVIDA,
-        RECLAMACAO,
-        ELOGIO
-    }
+    NENHUMA,
+    ERRO,
+    DUVIDA,
+    RECLAMACAO,
+    ELOGIO
 }

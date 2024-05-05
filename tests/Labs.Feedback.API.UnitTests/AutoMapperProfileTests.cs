@@ -1,86 +1,82 @@
-using System;
 using AutoMapper;
 using Labs.Feedback.API.Dto;
 using Labs.Feedback.API.Extensions;
 using Labs.Feedback.API.Model;
-using Microsoft.Extensions.DependencyInjection;
-using Xunit;
 
-namespace Labs.Feedback.API.UnitTests
+namespace Labs.Feedback.API.UnitTests;
+
+public class AutoMapperProfileTests
 {
-    public class AutoMapperProfileTests
+    private readonly IMapper _mapper;
+
+    public AutoMapperProfileTests()
     {
-        private readonly IMapper _mapper;
+        var services = new ServiceCollection();
+        services.AddAutoMapper();
 
-        public AutoMapperProfileTests()
+        var scope = services.BuildServiceProvider().CreateScope();
+        _mapper = scope.ServiceProvider.GetService<IMapper>();
+    }
+
+
+    [Fact]
+    public void AutoMapperProfile_ConverterMensagemDtoParaMensagemModel_True()
+    {
+        // Arrange
+        var ident = Guid.NewGuid();
+        var mensagemDto = new MensagemDto()
         {
-            var services = new ServiceCollection();
-            services.AddAutoMapper();
+            Ident = ident.ToString(),
+            Descricao = "Mensagem de feedback",
+            Categoria = "ELOGIO"
+        };
 
-            var scope = services.BuildServiceProvider().CreateScope();
-            _mapper = scope.ServiceProvider.GetService<IMapper>();
-        }
+        // Act
+        var mensagemModel = _mapper.Map<Mensagem>(mensagemDto);
 
+        // Assert
+        Assert.Equal(ident, mensagemModel.Ident);
+        Assert.Equal("Mensagem de feedback", mensagemModel.Descricao);
+        Assert.Equal(Categoria.ELOGIO, mensagemModel.Categoria);
+    }
 
-        [Fact]
-        public void AutoMapperProfile_ConverterMensagemDtoParaMensagemModel_True()
+    [Fact]
+    public void AutoMapperProfile_ConverterMensagemModelParaMensagemDto_True()
+    {
+        // Arrange
+        var ident = Guid.NewGuid();
+        var mensagem = new Mensagem
         {
-            // Arrange
-            var ident = Guid.NewGuid();
-            var mensagemDto = new MensagemDto()
-            {
-                Ident = ident.ToString(),
-                Descricao = "Mensagem de feedback",
-                Categoria = "ELOGIO"
-            };
+            Ident = ident,
+            Descricao = "Mensagem de feedback",
+            Categoria = Categoria.ERRO
+        };
 
-            // Act
-            var mensagemModel = _mapper.Map<Mensagem>(mensagemDto);
+        // Act
+        var mensagemDto = _mapper.Map<MensagemDto>(mensagem);
 
-            // Assert
-            Assert.Equal(ident, mensagemModel.Ident);
-            Assert.Equal("Mensagem de feedback", mensagemModel.Descricao);
-            Assert.Equal(Categoria.ELOGIO, mensagemModel.Categoria);
-        }
+        // Assert
+        Assert.Equal(ident, mensagemDto.Ident.ToGuid());
+        Assert.Equal("Mensagem de feedback", mensagemDto.Descricao);
+        Assert.Equal("ERRO", mensagemDto.Categoria);
+    }
 
-        [Fact]
-        public void AutoMapperProfile_ConverterMensagemModelParaMensagemDto_True()
+    [Fact]
+    public void AutoMapperProfile_ConverterMensagemDtoParaMensagemModelComCategoriaInvalida_CategoriaNENHUMA()
+    {
+        // Arrange
+        var ident = Guid.NewGuid();
+        var mensagemDto = new MensagemDto
         {
-            // Arrange
-            var ident = Guid.NewGuid();
-            var mensagem = new Mensagem
-            {
-                Ident = ident,
-                Descricao = "Mensagem de feedback",
-                Categoria = Categoria.ERRO
-            };
+            Ident = ident.ToString(),
+            Descricao = "Mensagem de feedback",
+            Categoria = "qualquer-coisa"
+        };
 
-            // Act
-            var mensagemDto = _mapper.Map<MensagemDto>(mensagem);
+        // Act
+        var mensagemModel = _mapper.Map<Mensagem>(mensagemDto);
 
-            // Assert
-            Assert.Equal(ident, mensagemDto.Ident.ToGuid());
-            Assert.Equal("Mensagem de feedback", mensagemDto.Descricao);
-            Assert.Equal("ERRO", mensagemDto.Categoria);
-        }
-
-        [Fact]
-        public void AutoMapperProfile_ConverterMensagemDtoParaMensagemModelComCategoriaInvalida_CategoriaNENHUMA()
-        {
-            // Arrange
-            var ident = Guid.NewGuid();
-            var mensagemDto = new MensagemDto
-            {
-                Ident = ident.ToString(),
-                Descricao = "Mensagem de feedback",
-                Categoria = "qualquer-coisa"
-            };
-
-            // Act
-            var mensagemModel = _mapper.Map<Mensagem>(mensagemDto);
-
-            // Assert
-            Assert.Equal(Categoria.NENHUMA, mensagemModel.Categoria);
-        }
+        // Assert
+        Assert.Equal(Categoria.NENHUMA, mensagemModel.Categoria);
     }
 }

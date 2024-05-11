@@ -1,0 +1,81 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "API Feedback",
+    "collectionId": "7889758d-4726-4c85-ac54-3560bd9478ba",
+    "dateExported": "2024-05-10T23:04:39.448Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "45b5dd75-977c-4787-846a-639eaa22f98e",
+            "colId": "7889758d-4726-4c85-ac54-3560bd9478ba",
+            "containerId": "",
+            "name": "Gravar Feedback DUVIDA",
+            "url": "http://localhost:5000/api/feedback",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-10T22:57:05.690Z",
+            "modified": "2024-05-10T22:58:50.154Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"descricao\": \"teste de mensagem\",\n  \"categoria\": \"duvida\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "6f011b65-e9c9-433e-bd8e-ab316b5f6f86",
+            "colId": "7889758d-4726-4c85-ac54-3560bd9478ba",
+            "containerId": "",
+            "name": "Consultar Feedback",
+            "url": "http://localhost:5000/api/feedback/d9ef5708-15aa-481b-b672-947213bd831b",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-10T22:59:29.660Z",
+            "modified": "2024-05-10T23:00:52.286Z",
+            "headers": []
+        },
+        {
+            "_id": "fd9f0638-6ba2-4c88-a72c-f310a192871b",
+            "colId": "7889758d-4726-4c85-ac54-3560bd9478ba",
+            "containerId": "",
+            "name": "Gravar Feedback ERRO",
+            "url": "http://localhost:5000/api/feedback",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-10T23:03:01.810Z",
+            "modified": "2024-05-10T23:04:13.695Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"descricao\": \"teste de exceção 123\",\n  \"categoria\": \"erro\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "37d3b44a-0bdb-4524-9a9f-84e23655e258",
+            "colId": "7889758d-4726-4c85-ac54-3560bd9478ba",
+            "containerId": "",
+            "name": "Consultar categoria DUVIDA",
+            "url": "http://localhost:5000/api/feedback/categoria/DUVIDA",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-10T23:01:08.107Z",
+            "modified": "2024-05-10T23:03:51.723Z",
+            "headers": []
+        },
+        {
+            "_id": "d7594ffe-82d4-42b6-aff4-3cf9840de3d3",
+            "colId": "7889758d-4726-4c85-ac54-3560bd9478ba",
+            "containerId": "",
+            "name": "Consultar categoria ERRO",
+            "url": "http://localhost:5000/api/feedback/categoria/erro",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-05-10T23:02:25.584Z",
+            "modified": "2024-05-10T23:03:38.315Z",
+            "headers": []
+        }
+    ],
+    "ref": "mdZIzCVFhgHuWDCX3TJxEDqKiUt3sbcAsQbSChf8G54iskC8ASjJIXrOKeg-GRV3AinluLYYgZFxQ63phlqbaw"
+}

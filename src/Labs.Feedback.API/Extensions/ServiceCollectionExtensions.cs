@@ -2,7 +2,6 @@ using AutoMapper;
 using Labs.Feedback.API;
 using Labs.Feedback.API.Extensions;
 using Labs.Feedback.API.Model;
-using System;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

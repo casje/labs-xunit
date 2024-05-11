@@ -16,10 +16,16 @@ public class MensagemServiceTests
     public void CadastrarMensagem_ValidacaoDasInformacoesDaMensagemComDadosValidos_MensagemDtoComAsInformacoesDeCadastro()
     {
         // Arrange
-        var mensagemDto = MensagemDtoBuilder.Criar().ComIdentDefault()
-                         .ComDescricao("Texto da mensagem").ComCategoria("ERRO").Build();
-        var mensagem = MensagemBuilder.Criar().ComIdentDefault()
-                         .ComDescricao("Texto da mensagem").ComCategoria(Categoria.ERRO).Build();
+        var mensagemDto = MensagemDtoBuilder.Criar()
+                                            .ComIdentDefault()
+                                            .ComDescricao("Texto da mensagem")
+                                            .ComCategoria("ERRO")
+                                            .Build();
+        var mensagem = MensagemBuilder.Criar()
+                                      .ComIdentDefault()
+                                      .ComDescricao("Texto da mensagem")
+                                      .ComCategoria(Categoria.ERRO)
+                                      .Build();
 
         var mockNotification = new Mock<INotificador>();
         var mockMapper = new Mock<IMapper>();
